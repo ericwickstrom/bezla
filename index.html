@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel KPI Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hotel Performance Dashboard</h1>
+            <p class="subtitle">Calculate key performance indicators in real-time</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Core Metrics</h2>
+                <div class="input-group">
+                    <label for="totalRooms">
+                        <span class="label-text">
+                            <span class="input-icon">🏨</span>
+                            Total Rooms Available
+                        </span>
+                        <input
+                            type="number"
+                            id="totalRooms"
+                            min="0"
+                            step="1"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            placeholder="Enter total rooms"
+                        >
+                        <span class="error-message" id="totalRoomsError"></span>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label for="roomsSold">
+                        <span class="label-text">
+                            <span class="input-icon">🔑</span>
+                            Rooms Sold
+                        </span>
+                        <input
+                            type="number"
+                            id="roomsSold"
+                            min="0"
+                            step="1"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            placeholder="Enter rooms sold"
+                        >
+                        <span class="error-message" id="roomsSoldError"></span>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label for="totalRevenue">
+                        <span class="label-text">
+                            <span class="input-icon">💰</span>
+                            Total Room Revenue ($)
+                        </span>
+                        <input
+                            type="number"
+                            id="totalRevenue"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter total revenue"
+                        >
+                    </label>
+                </div>
+            </section>
+
+            <section class="output-section">
+                <h2>Key Performance Indicators</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">📊</div>
+                        <div class="kpi-label">Occupancy</div>
+                        <div class="kpi-value" id="occupancy">--%</div>
+                        <div class="kpi-formula">Rooms Sold ÷ Total Rooms × 100</div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-icon">💵</div>
+                        <div class="kpi-label">Average Daily Rate</div>
+                        <div class="kpi-value" id="adr">$--</div>
+                        <div class="kpi-formula">Total Revenue ÷ Rooms Sold</div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-icon">📈</div>
+                        <div class="kpi-label">RevPAR</div>
+                        <div class="kpi-value" id="revpar">$--</div>
+                        <div class="kpi-formula">Total Revenue ÷ Total Rooms</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
